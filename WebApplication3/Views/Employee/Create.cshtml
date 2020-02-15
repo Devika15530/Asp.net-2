@@ -1,0 +1,78 @@
+﻿@model MyEmployee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+@*Name:@Html.TextBox("Textbox1", "Enter name")
+    <br />
+    Address:@Html.TextArea("textarea","Adress")
+    <br />
+    password:@Html.Password("password");
+    <br />
+    program:@Html.ListBox("l1",new MultiSelectList(new[] { "Asp","c#"}))*@
+
+@*@Html.Label("Name")
+    @Html.TextBoxFor(m => m.Name, "Enter name")
+    <br />
+    Address:@Html.TextAreaFor(m => m.Dept, "Adress")
+    <br />
+    @Html.LabelFor(m => m.Email)
+    @Html.PasswordFor(m => m.Id)
+    <br />*@
+
+@*program:@Html.ListBox("l1", new MultiSelectList(new[] { "Asp", "c#" }))*@
+
+
+@*@using (Html.BeginForm())//create a form
+{
+
+
+@Html.Display("Id")
+<br />
+@Html.DisplayFor(m => m.Id)
+<br />
+
+@Html.Display("Name")
+<br />
+@Html.DisplayFor(m => m.Name)
+<br />
+
+@Html.Display("Email")
+<br />
+@Html.DisplayFor(m => m.Email)
+<br />
+@Html.EditorFor(m => m.Dept)
+<br />
+<input class="btn-btn-primary" type="submit" value="submit" action="MyEmployee/Create/1" />
+}*@
+
+
+
+
+
+<form asp-controller="Employee" asp-action="Create" method="post">
+    <div class="form-row">
+        <label asp-for="Name" class="col-form-label">Name</label>
+        <input asp-for="Name" class="col-lg-6" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+    </div>
+
+    <div class="form-row">
+        <label asp-for="Email" class="col-form-label">Email</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <div class="form-row">
+        <label asp-for="Dept" class="col-form-label">Dept</label>
+        <select asp-for="Dept" asp-items="Html.GetEnumSelectList<Dept>()" ></select>
+    </div>
+    <div asp-validation-summary="All" class="text-danger">
+
+    </div>
+    <div class="form-row" >
+        <input type="submit" value="create employee"/>
+    </div>
+</form>

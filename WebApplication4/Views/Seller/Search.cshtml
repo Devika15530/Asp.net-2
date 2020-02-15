@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+</head>
+<body>
+    @{
+    var emp=ViewData["Employee"] as WebApplication4.Model.Seller;
+
+    }
+    <table border="1">
+
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Password</td>
+            <td>Gstin</td>
+            <td>companyname</td>
+            <td>Details</td>
+            <td>Cadress</td>
+            <td>Cweb</td>
+            <td>Email</td>
+            <td>Dept</td>
+        </tr>
+        <tr>
+   <td>   @emp.Id</td>
+    <td>   @emp.Name</td>
+     <td>  @emp.Pswd</td>
+      <td> @emp.Gstin</td>
+     <td>  @emp.compname</td>
+            <td>@emp.Cabout</td>
+      <td> @emp.Email</td>
+
+<td> @emp.Cabout</td>
+
+    <td>   @emp.Cadress
+            </td>
+            </tr>
+    </table>
+    
+</body>
+  </html>

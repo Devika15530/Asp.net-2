@@ -1,0 +1,114 @@
+﻿@model HandsOnMvcUsingModelValidations.Models.User
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+@*using (Html.BeginForm())
+    {
+    <table class="table">
+        <tr>
+            <td>Name:</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+
+        </tr>
+        <tr>
+            <td>DOB:</td>
+            <td>@Html.TextBoxFor(m => m.DOB,null,new { @type="Date"})</td>
+
+        </tr>
+        <tr>
+            <td>EMAIL:</td>
+            <td>@Html.TextBoxFor(m => m.Email)</td>
+
+        </tr>
+        <tr>
+            <td>Mobile:</td>
+            <td>@Html.TextBoxFor(m => m.MobileNo)</td>strongly typed heleper
+
+        </tr>
+        <tr>
+            @*<td>Country:</td>
+            <td>@Html.DropDownListFor(m => m.Country,null,new SelectList(new string[] { "India", "China", "Us", "Uk" }))</td>*@
+@*<td>Country:</td>
+        <td>
+            @Html.DropDownListFor(m => m.Country, ViewBag.Country as SelectList)
+        </td>
+
+    </tr>
+    <tr>
+        <td>UName:</td>
+        <td>@Html.TextBox("Uname")</td>
+
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td>@Html.Password("pwd")</td>@*standard heleper*@
+
+@*</tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Register" />
+
+            </td>
+        </tr>
+    </table>*@
+
+
+
+@using (Html.BeginForm())
+{
+
+
+<table class="table table-borderd">
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Name)</td>
+        <td>@Html.EditorFor(m => m.Name)</td>
+        <td>@Html.ValidationMessageFor(m => m.Name)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Email)</td>
+        <td>@Html.EditorFor(m => m.Email)</td>
+        <td>@Html.ValidationMessageFor(m => m.Email)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.DOB)</td>
+        <td>@Html.EditorFor(m => m.DOB)</td>
+        <td>@Html.ValidationMessageFor(m => m.DOB)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.MobileNo)</td>
+        <td>@Html.EditorFor(m => m.MobileNo)</td>
+        <td>@Html.ValidationMessageFor(m => m.MobileNo)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Country)</td>
+        <td>@Html.EditorFor(m => m.Country)</td>
+        <td>@Html.ValidationMessageFor(m => m.Country)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Uname)</td>
+        <td>@Html.EditorFor(m => m.Uname)</td>
+        <td>@Html.ValidationMessageFor(m => m.Uname)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Pwd)</td>
+        <td>@Html.EditorFor(m => m.Pwd)</td>
+        <td>@Html.ValidationMessageFor(m => m.Pwd)</td>
+    </tr>
+
+    <tr>
+        <td>@Html.DisplayNameFor(m => m.Cpwd)</td>
+        <td>@Html.EditorFor(m => m.Cpwd)</td>
+        <td>@Html.ValidationMessageFor(m => m.Cpwd)</td>
+    </tr>
+    <tr>
+        <td colsapan="2">
+            <input type="submit" value="login" />
+        </td>
+    </tr>
+</table>
+}
+
